@@ -12,7 +12,12 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from datetime import datetime, timedelta
 import random
-from ydata_profiling import ProfileReport
+try:
+    from ydata_profiling import ProfileReport
+    PROFILING_AVAILABLE = True
+except Exception as e:
+    PROFILING_AVAILABLE = False
+
 import streamlit.components.v1 as components
 import base64
 from io import BytesIO
